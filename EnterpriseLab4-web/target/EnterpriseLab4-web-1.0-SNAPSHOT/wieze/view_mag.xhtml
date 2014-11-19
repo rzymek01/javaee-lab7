@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:metadata>
+  <f:viewParam name="magId" value="#{viewMag.magId}" required="true" id="magId"/>
+  <f:event type="preRenderView" listener="#{viewMag.init()}"/>
+</f:metadata>
+
+<body>
+<ui:composition template="/WEB-INF/templates/main.xhtml">
+  <ui:define name="head">
+    <title>Mag #{viewMag.mag.imie}</title>
+  </ui:define>
+  <ui:define name="content">
+    <h:panelGrid columns="2">
+      <h:outputLabel value="#{msg.name}:" for="imie"/>
+      <h:outputText id="imie" value="#{viewMag.mag.imie}"/>
+
+      <h:outputLabel value="#{msg.mana}:" for="mana"/>
+      <h:outputText id="mana" value="#{viewMag.mag.mana}"/>
+
+      <h:outputLabel value="#{msg.element}:" for="zywiol"/>
+      <h:outputText id="zywiol" value="#{viewMag.mag.zywiol}"/>
+
+      <h:outputLabel value="#{msg.book}:" for="wieza"/>
+      <h:outputText id="wieza" value="#{viewMag.mag.wieza}"/>
+    </h:panelGrid>
+    <h:button value="#{msg.back}" outcome="list_wieze.xhtml"/>
+  </ui:define>
+</ui:composition>
+</body>
+</html>

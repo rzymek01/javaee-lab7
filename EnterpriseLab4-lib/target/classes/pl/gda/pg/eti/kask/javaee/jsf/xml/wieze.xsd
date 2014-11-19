@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.eti.pg.gda.pl/kask/javaee/wieze"
+            xmlns:tns="http://www.eti.pg.gda.pl/kask/javaee/wieze"
+            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.0"
+            elementFormDefault="qualified">
+  <xsd:simpleType name="zywiol">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="woda"/>
+      <xsd:enumeration value="ogien"/>
+      <xsd:enumeration value="ziemia"/>
+      <xsd:enumeration value="wiatr"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="mag">
+    <xsd:attribute name="imie" type="xsd:string" use="required"/>
+    <xsd:attribute name="mana" type="xsd:int" use="required"/>
+    <xsd:attribute name="zywiol" type="tns:zywiol" use="required"/>
+    <xsd:attribute name="id" type="xsd:int" use="required"/>
+  </xsd:complexType>
+  <xsd:complexType name="wieza">
+    <xsd:sequence>
+      <xsd:element name="mag" type="tns:mag" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="wysokosc" type="xsd:int" use="required"/>
+    <xsd:attribute name="id" type="xsd:int" use="required"/>
+  </xsd:complexType>
+  <xsd:element name="swiat">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="wieza" type="tns:wieza" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<swiat
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.eti.pg.gda.pl/kask/javaee/wieze"
+    xsi:schemaLocation="http://www.eti.pg.gda.pl/kask/javaee/wieze">
+  <wieza wysokosc="3" id="1">
+  </wieza>
+  <wieza wysokosc="4" id="2">
+    <mag imie="Gandalf" mana="101" zywiol="ziemia" id="1"></mag>
+  </wieza>
+  <wieza wysokosc="10" id="3">
+    <mag imie="Saruman" mana="99" zywiol="ogien" id="2"></mag>
+    <mag imie="Radgast" mana="50" zywiol="ziemia" id="3"></mag>
+  </wieza>
+</swiat>
