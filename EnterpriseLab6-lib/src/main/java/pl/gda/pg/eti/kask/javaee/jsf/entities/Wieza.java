@@ -48,8 +48,7 @@ import javax.xml.bind.annotation.XmlType;
 @NamedQuery(name = "Wieza.findAll", query = "SELECT w FROM Wieza w")
 public class Wieza {
 
-  @XmlTransient
-  //@XmlElement(namespace = "http://www.eti.pg.gda.pl/kask/javaee/wieze")
+  @XmlElement(namespace = "http://www.eti.pg.gda.pl/kask/javaee/wieze")
   @OneToMany(mappedBy = "wieza", cascade = CascadeType.ALL)
   protected List<Mag> mag;
 

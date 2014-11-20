@@ -5,10 +5,16 @@
         title="A message in the WADL"
         xml:lang="en"><![CDATA[This is added to the start of the generated application.wadl]]></doc><grammars/><resources
             base="https://localhost:8181/rest"><resource
-                path="/books"><method id="findWieze"
-                        name="GET"><request><param name="offset"
-                        style="query" type="xs:int" default="0"
-                        xmlns:xs="http://www.w3.org/2001/XMLSchema"/><param
-                        name="limit" style="query" type="xs:int"
-                        default="0"
-                        xmlns:xs="http://www.w3.org/2001/XMLSchema"/></request><response><representation mediaType="application/xml"/></response></method></resource></resources></application>
+                path="/wieze"><method id="findWieze"
+                        name="GET"><response><representation
+                mediaType="application/json"/></response></method><resource
+                    path="/wieza-{id : [0-9]+}"><param name="id"
+                    style="template" type="xs:int"
+                    xmlns:xs="http://www.w3.org/2001/XMLSchema"/><method
+                    id="findWieza" name="GET"><response><representation
+                mediaType="application/json"/></response></method></resource><resource
+                    path="/wieza-{id : [0-9]+}/nowy-mag"><param
+                    name="id" style="template" type="xs:int"
+                    xmlns:xs="http://www.w3.org/2001/XMLSchema"/><method
+                    id="saveNewMag" name="POST"><request><representation
+                            mediaType="application/json"/></request><response><representation mediaType="*/*"/></response></method></resource></resource></resources></application>

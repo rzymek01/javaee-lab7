@@ -9,5 +9,5 @@ pl/gda/pg/eti/kask/javaee/jsf/entities/validators/GoodName.class
 pl/gda/pg/eti/kask/javaee/jsf/entities/validators/InPast.class
 pl/gda/pg/eti/kask/javaee/jsf/entities/Wieza.class
 pl/gda/pg/eti/kask/javaee/jsf/entities/User.class
-pl/gda/pg/eti/kask/javaee/jsf/events/BasicEvent.class
 pl/gda/pg/eti/kask/javaee/jsf/entities/validators/InPastValidator.class
+pl/gda/pg/eti/kask/javaee/jsf/events/BasicEvent.class

@@ -1,7 +1,7 @@
-/macierz/home/137396rm/public_html/lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/PilnujStanowiska.java
-/macierz/home/137396rm/public_html/lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/WiezaService.java
-/macierz/home/137396rm/public_html/lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/SyndromPSLu.java
-/macierz/home/137396rm/public_html/lab7/EnterpriseLab6-ejb/src/main/java/com/mycompany/NewSessionBean.java
-/macierz/home/137396rm/public_html/lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/MyEntityManagerProducer.java
-/macierz/home/137396rm/public_html/lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/UserService.java
-/macierz/home/137396rm/public_html/lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/MyEntityManager.java
+/home/maciek/Studies/NiAJEE/lab/Lab7/EnterpriseLab6-ejb/src/main/java/com/mycompany/NewSessionBean.java
+/home/maciek/Studies/NiAJEE/lab/Lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/WiezaService.java
+/home/maciek/Studies/NiAJEE/lab/Lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/UserService.java
+/home/maciek/Studies/NiAJEE/lab/Lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/MyEntityManager.java
+/home/maciek/Studies/NiAJEE/lab/Lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/SyndromPSLu.java
+/home/maciek/Studies/NiAJEE/lab/Lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/PilnujStanowiska.java
+/home/maciek/Studies/NiAJEE/lab/Lab7/EnterpriseLab6-ejb/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/MyEntityManagerProducer.java
