@@ -10,9 +10,9 @@
                 <title>#{msg.login}</title>
             </ui:define>
             <ui:define name="content">
-                <form method="post" action="j_security_check" >
-                    <h:outputText value="#{msg.login}"/> <input type="text"  name= "j_username" /><br/>
-                    <h:outputText value="#{msg.password}"/> <input type="password"  name= "j_password" /> <br/>
+                <form method="post" action="j_security_check">
+                    <h:outputText value="#{msg.login}"/> <input type="text" name="j_username" /><br/>
+                    <h:outputText value="#{msg.password}"/> <input type="password" name="j_password" /> <br/>
                     <input type="submit" value="#{msg.login}"/>
                 </form>
             </ui:define>

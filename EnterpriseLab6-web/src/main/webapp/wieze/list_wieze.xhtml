@@ -1,84 +1,88 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-    <body>
-        <ui:composition template="/WEB-INF/templates/main.xhtml">
-            <ui:define name="head">
-                <title>#{msg.books}</title>
-            </ui:define>
-            <ui:define name="content">
-                <h:dataTable value="#{listWieze.wieze}" var="wieza">
-                    <h:column>
-                        <h:outputText value="#{wieza.id}"/>
-                    </h:column>
-                    <h:column>
-                        <h:outputText value="#{wieza.wysokosc}"/>
-                    </h:column>
-                    <h:column>
-                        <h:outputText value="#{wieza.owner.login}"/>
-                    </h:column>
-                    <h:column>
-                        <h:dataTable value="#{wieza.mag}" var="mag">
-                            <h:column>
-                                <h:outputText value="#{mag.id}"/>
-                            </h:column>
-                            <h:column>
-                                <h:outputText value="#{mag.imie}"/>
-                            </h:column>
-                            <h:column>
-                                <h:outputText value="#{mag.mana}"/>
-                            </h:column>
-                            <h:column>
-                                <h:outputText value="#{mag.zywiol}"/>
-                            </h:column>
-                            <h:column>
-                                <h:button value="#{msg.view}" outcome="view_mag.xhtml">
-                                    <f:param name="magId" value="#{mag.id}"/>
-                                </h:button>
-                            </h:column>
-                            <h:column>
-                                <h:button value="#{msg.edit}" outcome="edit_mag.xhtml">
-                                    <f:param name="magId" value="#{mag.id}"/>
-                                </h:button>
-                            </h:column>
-                            <h:column>
-                                <h:form>
-                                    <h:commandButton value="#{msg.remove}" action="#{listWieze.removeMag(mag)}"/>
-                                </h:form>
-                            </h:column>
-                        </h:dataTable>
-                    </h:column>
-                    <h:column>
-                        <h:button value="#{msg.view}" outcome="view_wieza.xhtml">
-                            <f:param name="wiezaId" value="#{wieza.id}"/>
-                        </h:button>
-                    </h:column>
-                    <h:column>
-                        <h:button value="#{msg.edit}" outcome="edit_wieza.xhtml">
-                            <f:param name="wiezaId" value="#{wieza.id}"/>
-                        </h:button>
-                    </h:column>
-                    <h:column>
-                        <h:form>
-                            <h:commandButton value="#{msg.remove}" action="#{listWieze.removeWieza(wieza)}"/>
-                        </h:form>
-                    </h:column>
-                </h:dataTable>
-                <h:form>
-                    <h:commandButton value="#{msg.download}" action="#{listWieze.downloadSwiatXML()}"/>
-                </h:form>
-                <h:button value="#{msg.newTower}" outcome="edit_wieza.xhtml"/>
-                <h:button value="#{msg.newMag}" outcome="edit_mag.xhtml"/>
-                <h:form>
-                    <h:commandButton value="Trenuj magów (zwiększa manę o 15)" action="#{listWieze.trenujMagow(15)}"/>
-                </h:form>
-                <br/>
-                <h:button value="Zmień hasło" outcome="edit_user.xhtml"/>
-            </ui:define>
-        </ui:composition>
-    </body>
+  <body>
+    <ui:composition template="/WEB-INF/templates/main.xhtml">
+      <ui:define name="head">
+        <title>#{msg.books}</title>
+      </ui:define>
+      <ui:define name="content">
+        <h:form id="form">
+          <p:dataTable value="#{listWieze.wieze}" var="wieza" id="table">
+            <p:column width="50" headerText="ID">
+              <h:outputText value="#{wieza.id}"/>
+            </p:column>
+            <p:column width="50" headerText="Wysokość">
+              <h:outputText value="#{wieza.wysokosc}"/>
+            </p:column>
+            <p:column width="120" headerText="Właściciel">
+              <h:outputText value="#{wieza.owner.login}"/>
+            </p:column>
+            <p:column width="*" headerText="Magowie">
+              <p:dataTable value="#{wieza.mag}" var="mag" id="table2">
+                <p:column headerText="ID">
+                  <h:outputText value="#{mag.id}"/>
+                </p:column>
+                <p:column headerText="Imię">
+                  <h:outputText value="#{mag.imie}"/>
+                </p:column>
+                <p:column headerText="Mana">
+                  <h:outputText value="#{mag.mana}"/>
+                </p:column>
+                <p:column headerText="Żywioł">
+                  <h:outputText value="#{mag.zywiol}"/>
+                </p:column>
+                <p:column headerText="Akcje" width="270">
+                  <p:button value="#{msg.view}" outcome="view_mag.xhtml">
+                    <f:param name="magId" value="#{mag.id}"/>
+                  </p:button>
+
+                  <p:button value="#{msg.edit}" outcome="edit_mag.xhtml">
+                    <f:param name="magId" value="#{mag.id}"/>
+                  </p:button>
+
+                  <p:poll interval="3" widgetVar="poll" autoStart="false"
+                    listener="#{listWieze.updateMagowie}"
+                    stop="#{listWieze.removeMagCompleted}" update=":form:table:table2"/>
+                  <p:commandButton value="Usuń" process="@this" update=":form:table:table2"
+                                   actionListener="#{listWieze.removeMag(mag)}"
+                                   oncomplete="PF('poll').start();"/>
+                </p:column>
+
+              </p:dataTable>
+            </p:column>
+            <p:column width="120" headerText="Akcje">
+              <p:button value="#{msg.view}" outcome="view_wieza.xhtml">
+                <f:param name="wiezaId" value="#{wieza.id}"/>
+              </p:button>
+              <br/>
+              <p:button value="#{msg.edit}" outcome="edit_wieza.xhtml">
+                <f:param name="wiezaId" value="#{wieza.id}"/>
+              </p:button>
+
+              <h:commandButton value="#{msg.remove}" action="#{listWieze.removeWieza(wieza)}"/>
+            </p:column>
+          </p:dataTable>
+
+          
+        </h:form>
+
+        <h:form>
+          <h:commandButton value="#{msg.download}" action="#{listWieze.downloadSwiatXML()}"/>
+        </h:form>
+        <h:button value="#{msg.newTower}" outcome="edit_wieza.xhtml"/>
+        <h:button value="#{msg.newMag}" outcome="edit_mag.xhtml"/>
+        <h:form>
+          <h:commandButton value="Trenuj magów (zwiększa manę o 15)" action="#{listWieze.trenujMagow(15)}"/>
+        </h:form>
+        <br/>
+        <h:button value="Zmień hasło" outcome="edit_user.xhtml"/>
+      </ui:define>
+    </ui:composition>
+  </body>
 </html>

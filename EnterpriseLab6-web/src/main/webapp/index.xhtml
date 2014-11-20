@@ -2,17 +2,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-    <body>
-        <ui:composition template="/WEB-INF/templates/main.xhtml">
-            <ui:define name="head">
-                <title>#{msg.books}</title>
-            </ui:define>
-            <ui:define name="content">
-                <h:link outcome="wieze/list_wieze.xhtml" value="#{msg.books}"/>
-                <br/>
-                <h:link outcome="admin/list_users.xhtml" value="Użytkownicy"/>
-            </ui:define>
-        </ui:composition>
-    </body>
+  <body>
+    <ui:composition template="/WEB-INF/templates/main.xhtml">
+      <ui:define name="head">
+        <title>#{msg.books}</title>
+      </ui:define>
+      <ui:define name="content">
+        <h:link outcome="wieze/list_wieze.xhtml" value="#{msg.books}"/>
+        <br/>
+        <h:link outcome="admin/list_users.xhtml" value="Użytkownicy"/>
+        <br/>
+
+        <p:socket channel="/notifications">
+          <p:ajax event="message" update="@all"/>
+        </p:socket>
+
+        <p:dataTable value="#{listMegaMagowie.magowie}" var="mag">
+          <p:column headerText="ID">
+            <h:outputText value="#{mag.id}"/>
+          </p:column>
+          <p:column headerText="Imię">
+            <h:outputText value="#{mag.imie}"/>
+          </p:column>
+          <p:column headerText="Mana">
+            <h:outputText value="#{mag.mana}"/>
+          </p:column>
+        </p:dataTable>
+      </ui:define>
+    </ui:composition>
+  </body>
 </html>

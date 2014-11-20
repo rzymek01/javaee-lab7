@@ -1,10 +1,13 @@
-/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/EditMag.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/ViewWieza.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/ViewMag.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/ListWieze.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/validators/BookTitleValidator.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/rank/RankingResource.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/EditMag.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/rank/ListMegaMagowie.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/rank/MegaMagowie.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/ListUsers.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/converters/WiezaConverter.java
-/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/ViewMag.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/EditUser.java
-/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/ListWieze.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/converters/MagConverter.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/EditWieza.java
-/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-web/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/view/validators/BookTitleValidator.java

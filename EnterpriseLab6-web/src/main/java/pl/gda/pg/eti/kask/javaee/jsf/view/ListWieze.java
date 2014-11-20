@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.Future;
 import java.util.logging.Level;
 import javax.ejb.EJB;
 import lombok.extern.java.Log;
@@ -28,6 +29,8 @@ public class ListWieze implements Serializable {
 
     @EJB
     private WiezaService wiezaService;
+    
+    private Future<Void> future;
 
     public ListWieze() {
 
@@ -71,15 +74,25 @@ public class ListWieze implements Serializable {
 
     public void removeMag(Mag mag) {
         try {
-            wiezaService.removeMag(mag);
-            magowie = wiezaService.findAllMagowie();
-            wieze = wiezaService.findAllWieze();
+            future = wiezaService.removeMag(mag);
+//            magowie = wiezaService.findAllMagowie();
+//            wieze = wiezaService.findAllWieze();
         } catch (Exception e) {
             try {
                 FacesContext.getCurrentInstance().getExternalContext().redirect("../error/403.xhtml");
             } catch (IOException ex) {
                 log.log(Level.SEVERE, null, ex);
             }
+        }
+    }
+    
+    public boolean isRemoveMagCompleted() {
+        return (future != null && future.isDone());
+    }
+
+    public void updateMagowie() {
+        if (isRemoveMagCompleted()) {
+          wieze = wiezaService.findAllWieze();
         }
     }
 

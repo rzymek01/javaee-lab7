@@ -20,31 +20,28 @@ import pl.gda.pg.eti.kask.javaee.jsf.entities.Mag;
 @Interceptor
 @SyndromPSLu
 public class PilnujStanowiska implements Serializable {
-    
-    @Inject
-    @MyEntityManager
-    private EntityManager em;
-    
-    @AroundInvoke
-    public Object invoke(InvocationContext context) throws Exception{
-        
-        Object param = context.getParameters()[0];
-        if (param instanceof Mag){
-            Mag mag = (Mag)param;
-            
-            if (mag.getId() <= 0 ) {
-                int manaDyrektora = (int)em.createQuery("select max(m.mana) from Mag m").getSingleResult();
-                int manaPelikana = mag.getMana();
-                
-                if (manaPelikana >= manaDyrektora) {
-                    mag.setMana(1);
-                }
-                
-            }
+
+  @Inject
+  @MyEntityManager
+  private EntityManager em;
+
+  @AroundInvoke
+  public Object invoke(InvocationContext context) throws Exception {
+    Object param = context.getParameters()[0];
+    if (param instanceof Mag) {
+      Mag mag = (Mag) param;
+
+      if (mag.getId() <= 0) {
+        int manaDyrektora = (int) em.createQuery("select max(m.mana) from Mag m").getSingleResult();
+        int manaPelikana = mag.getMana();
+
+        if (manaPelikana >= manaDyrektora) {
+          mag.setMana(1);
         }
-        
-        Object result = context.proceed();
-        return result;
+      }
     }
-    
+
+    Object result = context.proceed();
+    return result;
+  }
 }

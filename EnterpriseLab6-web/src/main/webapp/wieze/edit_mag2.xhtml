@@ -19,27 +19,27 @@
     <h:form>
       <h:panelGrid columns="3">
         <h:outputLabel value="#{msg.name}:" for="imie"/>
-        <h:inputText id="imie" value="#{editMag.mag.imie}" required="true"/>
+        <h:inputText id="imie" value="#{editMag.mag.imie}" required="true" disabled="true"/>
         <h:message for="imie"/>
 
         <h:outputLabel value="#{msg.mana}:" for="mana"/>
-        <h:inputText id="mana" value="#{editMag.mag.mana}" required="true"/>
+        <h:inputText id="mana" value="#{editMag.mag.mana}" required="true" disabled="true"/>
         <h:message for="mana"/>
 
         <h:outputLabel value="#{msg.element}:" for="zywiol"/>
-        <h:selectOneMenu id="zywiol" value="#{editMag.mag.zywiol}" required="true" disabled="true">
+        <h:selectOneMenu id="zywiol" value="#{editMag.mag.zywiol}" required="true">
           <f:selectItems value="#{editMag.zywiolyAsSelectItems}"/>
         </h:selectOneMenu>
         <h:message for="zywiol"/>
 
         <h:outputLabel value="#{msg.books}:" for="wieza"/>
-        <h:selectOneMenu id="wieza" value="#{editMag.mag.wieza}" converter="#{wiezaConverter}" required="true" disabled="true">
+        <h:selectOneMenu id="wieza" value="#{editMag.mag.wieza}" converter="#{wiezaConverter}" required="true">
           <f:selectItems value="#{editMag.wiezeAsSelectItems}"/>
         </h:selectOneMenu>
         <h:message for="wieza"/>
       </h:panelGrid>
-      <h:commandButton value="Dalej" action="edit_mag2.xhtml?faces-redirect=true"/>
-      <h:commandButton value="#{msg.save}" action="#{editMag.saveMag()}" disabled="true"/>
+      <h:commandButton value="Wstecz" action="edit_mag.xhtml?faces-redirect=true"/>
+      <h:commandButton value="#{msg.save}" action="#{editMag.saveMag()}"/>
     </h:form>
     <h:button value="#{msg.back}" outcome="list_wieze.xhtml"/>
   </ui:define>

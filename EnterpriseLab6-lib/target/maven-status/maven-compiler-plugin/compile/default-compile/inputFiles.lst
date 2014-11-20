@@ -2,10 +2,12 @@
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/validators/InPast.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/User.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/package-info.java
-/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/validators/GoodName.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/validators/InPastValidator.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/validators/GoodNameValidator.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/Swiat.java
-/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/Wieza.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/Mag.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/events/BasicEvent.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/validators/GoodName.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/Wieza.java
+/home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/events/ChangeMagowieEvent.java
 /home/maciek/Studies/NiAJEE/lab/Lab6/EnterpriseLab6-lib/src/main/java/pl/gda/pg/eti/kask/javaee/jsf/entities/Zywiol.java
