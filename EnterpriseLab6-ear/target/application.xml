@@ -10,5 +10,11 @@
       <context-root>/EnterpriseLab6-web</context-root>
     </web>
   </module>
+  <module>
+    <web>
+      <web-uri>rest-1.0-SNAPSHOT.war</web-uri>
+      <context-root>/rest</context-root>
+    </web>
+  </module>
   <library-directory>lib</library-directory>
 </application>

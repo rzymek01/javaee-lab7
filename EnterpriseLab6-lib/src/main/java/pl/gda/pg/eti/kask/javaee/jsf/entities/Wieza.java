@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -47,7 +48,8 @@ import javax.xml.bind.annotation.XmlType;
 @NamedQuery(name = "Wieza.findAll", query = "SELECT w FROM Wieza w")
 public class Wieza {
 
-  @XmlElement(namespace = "http://www.eti.pg.gda.pl/kask/javaee/wieze")
+  @XmlTransient
+  //@XmlElement(namespace = "http://www.eti.pg.gda.pl/kask/javaee/wieze")
   @OneToMany(mappedBy = "wieza", cascade = CascadeType.ALL)
   protected List<Mag> mag;
 
@@ -62,6 +64,7 @@ public class Wieza {
   protected int id;
   
   @ManyToOne
+  @XmlTransient
   @JoinColumn(name = "owner", referencedColumnName = "id")
   private User owner;
 

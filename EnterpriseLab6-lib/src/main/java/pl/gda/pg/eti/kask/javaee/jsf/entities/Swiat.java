@@ -9,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -31,7 +32,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  * 
  */
-@ToString(exclude = "wieza")
+//@ToString(exclude = "wieza")
+@ToString
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
@@ -44,6 +46,7 @@ import javax.xml.bind.annotation.XmlType;
 public class Swiat {
 
     @XmlElement(namespace = "http://www.eti.pg.gda.pl/kask/javaee/wieze", required = true)
+//    @XmlTransient
     protected List<Wieza> wieza;
 
     /**
